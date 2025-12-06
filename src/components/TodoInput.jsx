@@ -6,18 +6,20 @@ function TodoInput({onAdd}){
         onAdd(inputValue);
         setInputValue("");
     };
-
+    const onKeyDown = (e) => {
+        if(e.key === "Enter") handleAdd();
+    }
     return (
-        <div style={{marginBottom: "10px"}}>
+        <div className="input-row">
             <input
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
-                placeholder="請輸入代辦事項"
+                placeholder="輸入待辦事項，按 Enter 或點新增"
+                onKeyDown={onKeyDown}
                 style={{padding: "5px", width: "68%"}}
-
             />
-            <button onClick={handleAdd} style={{marginLeft: "10px"}}>
+            <button onClick={handleAdd} disabled={!inputValue.trim()}>
                 新增
             </button>
         </div>
