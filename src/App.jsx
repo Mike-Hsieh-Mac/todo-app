@@ -27,9 +27,9 @@ function App() {
   const addTodo = (text) => {
     const t = text.trim();
     if(t === '') return;
-    setTodos((prev) => {
+    setTodos((prev) => 
       [...prev, {id: crypto.randomUUID?.() || Date.now(), text: t, urgent: false, completed: false}]
-    })
+    )
     //setTodos([...todos, {id: Date.now(), text, urgent: false, completed: false}]);
   }
   const deleteTodo = (id) => {
@@ -58,7 +58,7 @@ function App() {
     setTodos((prev) => prev.filter((todo) => !todo.completed));
   }
   const remainingCount = useMemo(
-      () => todos.filter((t) => !t.completed).length,[todos]
+      () => todos.filter((t) => !t.completed).length, [todos]
   );
   const filteredTodos = useMemo(() => {
     switch (filter) {
