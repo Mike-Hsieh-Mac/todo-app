@@ -71,7 +71,7 @@ function App() {
     }
   }, [todos, filter]);
   return (
-    <div className="container" style={{padding:"20px", maxWidth:"1600px", margin:"auto", 
+    <div className="container" style={{padding:"20px", maxWidth:"100%", margin:"auto", 
         position: "absolute",
         top: "50%",
         left: "50%",
